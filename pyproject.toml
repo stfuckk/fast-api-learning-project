@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "fast-api-learning-project"
+version = "0.1.0"
+description = ""
+authors = ["Kozlov Denis <denkis2205@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["standard"], version = "^0.112.2"}
+uvicorn = {extras = ["standard"], version = "^0.30.6"}
+sqlalchemy = {extras = ["standard"], version = "^2.0.32"}
+pydantic = {extras = ["standard"], version = "^2.8.2"}
+python-dotenv = {extras = ["standard"], version = "^1.0.1"}
+python-jose = {extras = ["standard"], version = "^3.3.0"}
+bcrypt = {extras = ["standard"], version = "^4.2.0"}
+python-multipart = {extras = ["standard"], version = "^0.0.9"}
+passlib = {extras = ["standard"], version = "^1.7.4"}
+pydantic-core = {extras = ["standard"], version = "^2.23.1"}
+psycopg2-binary = {extras = ["standard"], version = "^2.9.9"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

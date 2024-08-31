@@ -2,10 +2,20 @@
  
 # Подготовка проекта
 
-- Установите нужные пакеты:
+- Установите Poetry, если он еще не установлен:
+    ```bash
+    # cmd (linux, macos, windows)
+    curl -sSL https://install.python-poetry.org | python3 -
+    # pwsh
+    (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+    
+    # не забудьте добавить в path - смотреть документацию
+    # https://python-poetry.org/docs/#installing-with-the-official-installer
+    ```
+- Создайте виртуальное окружение и установите зависимости:
 
-   ```python
-   pip install -r requirements.txt
+   ```bash
+   poetry install
    ```
 - Подготовьте СУБД (например, PostgreSQL) и создайте БД и пользователя с правами на эту БД
 - Создайте .env файл в корне проекта и заполните в нем переменные окружения для защиты от посторонних глаз, ориентируясь на следующий пример:
@@ -17,41 +27,14 @@
 
 # Запуск
 
-- Перейдите по следующему пути находясь в корне проекта:
+- Перейдите в папку с кодом проекта:
 
-   ```python
+   ```bash
    cd .\src
    ```
 - Запустите FastAPI приложение:
 
-   ```python
-   uvicorn main:app --reload
+   ```bash
+   poetry run uvicorn main:app --reload
    ```
-
-> Запуск также можно произвести, создав виртуальное окружение venv и установив пакеты в нем:
-> 
->  ```python
->  python -m venv venv
->  ```
->
-> Запустить скрипт:
->
-> ```
-> venv\Scripts\activate.bat - для Windows
-> source venv/bin/activate - для Linux и MacOS
-> ```
->
-> Приглашение оболчки изменится и появится (venv) - это значит, что мы находимся внутри виртуального окружения.
-> 
-> Далее выполняем установку пакетов python
-> ```
-> pip install -r requirements.txt
-> ```
->
-> и запускаем приложение находясь в .\src
->
-> ```python
-> uvicorn main:app
-> ```
-   
     
